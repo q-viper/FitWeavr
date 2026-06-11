@@ -1,0 +1,6 @@
+include README.md
+include .env.example
+include requirements.txt
+include run_fitweavr_web.ps1
+include run_fitweavr_web.sh
+recursive-include src/fitweavr_web/assets *.png

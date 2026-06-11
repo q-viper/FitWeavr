@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fitweavr"
+version = "0.1.0"
+description = "OOP tools for converting fitness activity exports between formats."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Viper" }
+]
+dependencies = [
+    "anyio>=4.0",
+    "garmin-fit-sdk>=21.205.0",
+    "loguru>=0.7.2",
+    "nicegui>=2.0.0",
+    "python-dotenv>=1.0.1",
+    "typer>=0.12.0"
+]
+keywords = ["fitness", "fit", "tcx", "google-fit", "zepp", "activity", "fitweavr"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.scripts]
+fitweavr = "fitweavr.cli:main"
+fitness-convert = "fitweavr.cli:main"
+google-fit-to-fit = "fitweavr.cli:main"
+fitweavr-web = "fitweavr_web.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fitweavr_web = ["assets/*.png"]
